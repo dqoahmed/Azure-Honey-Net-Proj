@@ -1,5 +1,4 @@
-# Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+# Setting up a Honeynet environment in Azure Microsoft
 
 ## Introduction
  In this project, my objective is to establish a cloud honeynet Environment within Microsoft Azure, encompassing the creation of essential resources such as virtual machines, key vaults, and storage. Subsequently, I will configure Azure Active Directory, implement log analytics, and integrate a Security Information and Event Management (SIEM) system.
@@ -25,9 +24,12 @@ The architecture of the mini honeynet in Azure consists of the following compone
   Here I created two virtual machines and added them in the same resource group and configured the network resource group for both VMs to be vulnerable by modifying the inbound security rules on the network security group and turned off   the VMs firewall defender as part of the honey net. Also, I installed SQL Server in Windows VM as another end point for people to attack. I exposed our network with the intent to observe our logs and secure them later. Then I added     another attack VM with separate network, location and resource group and installed SQL to attack the other VMs in order to generate and observe logs and then secure the environment for comparison.
   
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/4fe3279f-73ef-429b-8304-03a723ca4e41)
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/524bf431-6b3f-4b4b-9ff1-7f4aba0abfcd)
-
   
+ resource group
+ 
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/eb924822-01b0-4613-98a7-102fb40d8603)
+
+
 ## Storgae Account
    Created a storage account within the same resource group as the other resources.
    
@@ -44,10 +46,9 @@ The architecture of the mini honeynet in Azure consists of the following compone
   
    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/0dcf8857-4e29-45a8-9a3f-3df5802ca4f2)
    
- Setting up logs for Azure Active Directory will help us forward logs to the Log Analytics Workspace. After enabling audit and sign-in log for AAD, I’ll create a user, assign roles and play around with it to show audit log in Log 
- Analytics Workspace
- 
-   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/2fef573b-1459-43d2-a6f2-3c8114a74c7b)
+Here is an example of implementing the principle of least privledge. Jessica is a subscription level reader. She can access resource groups but can’t make any changes as a reader. The last two screenshots show that she was able to view the resource group but couldn’t apply any changes. 
+   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/c54162c3-27b6-4da9-afd3-3a64280580fd)
+
 
 
 ## Creating Log Analytics workspace 
@@ -56,7 +57,7 @@ The architecture of the mini honeynet in Azure consists of the following compone
   
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/f2f457b7-f45e-4e23-9c58-f56ecba0ee003f)
 
-## Creating Microsoft Sentinel (SIEM) 
+## Creating Microsoft Sentinel (SIEM) and uploading a watch-list
 
   Azure Sentinel is a Microsoft SIEM, that aids in detecting, investigating, and responding to security threats across enterprises. With advanced data collection, detection, seamless integration, and robust incident response tools.
   Now creating Microsoft Sentinel and connecting it to log analytics workspace. 
