@@ -46,7 +46,7 @@ The architecture of the mini honeynet in Azure consists of the following compone
   
    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/0dcf8857-4e29-45a8-9a3f-3df5802ca4f2)
    
-Here is an example of implementing the principle of least privledge. Jessica is a subscription level reader. She can access resource groups but can’t make any changes as a reader. The last two screenshots show that she was able to view the resource group but couldn’t apply any changes. 
+ Here is an example of implementing the principle of least privledge. Jessica is a subscription level reader. She can access resource groups but can’t make any changes as a reader. The last two screenshots show that she was able to view  the resource group but couldn’t apply any changes. 
    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/c54162c3-27b6-4da9-afd3-3a64280580fd)
 
 
@@ -98,7 +98,7 @@ Here is an example of implementing the principle of least privledge. Jessica is 
 
 ## Enabling Loging and monitoring at the Resource level for storage and key vault
 
-Activating log collection for storage and key vault through diagnostics as part of our resources. I’ll upload a file to a container in the storage and edit then create secret passwords and view the passwords in the key vault to     generate logs in the log analytics.
+ Activating log collection for storage and key vault through diagnostics as part of our resources. I’ll upload a file to a container in the storage and edit then create secret passwords and view the passwords in the key vault to         generate logs in the log analytics.
 
 ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/c74e43f1-5ad3-43ee-9392-f8220a6fdaf5)
 ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/1b2c84f6-3c5f-48c4-9bd8-ecc7d6aaba26)
