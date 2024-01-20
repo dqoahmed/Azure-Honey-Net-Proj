@@ -37,6 +37,10 @@ The architecture of the mini honeynet in Azure consists of the following compone
   
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/4fe3279f-73ef-429b-8304-03a723ca4e41)
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/7b4120de-9bf2-4abb-b85b-c240333937f9)
+  
+## Storgae Account
+   Created a storage account within the same resource group as the other resources.
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/ee92ad75-efa5-4783-ae1a-d3ed116af617)
 
 ## Azure Active Directory (AAD)
 
@@ -49,18 +53,22 @@ The architecture of the mini honeynet in Azure consists of the following compone
 ## Creating LOG Analytics workspace 
 
   Setting up log analytics workspace which is a central log repository or log container for all applications and infrastructure which helps you collect, monitor, analyze, and query data.
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/d85db180-f56c-4080-9f7c-aaeb614f5e4b)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/f2f457b7-f45e-4e23-9c58-f56ecba0ee00)
 
 ## Creating Microsoft Sentinel SIEM 
 
   Azure Sentinel is a Microsoft SIEM, that aids in detecting, investigating, and responding to security threats across enterprises. With advanced data collection, detection, seamless integration, and robust incident response tools.
   Now creating Microsoft Sentinel and connecting it to log analytics workspace. 
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/327fca2e-89b9-4a7b-8452-2fb1efecc0d0)
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/e912ad94-5da9-46f7-a570-682ea8258d57)
+
 
 ## Microsoft defender
    Enabling Microsoft defender for cloud which allows us to collect all event logs from vms, subscriptions to forward them to the central repository log analytics workspace.
+   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/42274b7d-1961-4886-a91c-2b99e42f0517)
+
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/1009cd59-de85-4793-8b82-7a55b793c2ab)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/6b72741b-87f4-4ba3-9b82-0e782f63679a)
+
 
  
 ## 	Enabling log collection for VMs and network security groups
@@ -68,9 +76,7 @@ The architecture of the mini honeynet in Azure consists of the following compone
    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/58a11530-3d6b-4443-a669-13b55383a92a)
    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/0f219196-28b9-42dc-84c5-7926bb3c9610)
 
-## Storgae Account
-   Created a storage account within the same resource group as the other resources.
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/ee92ad75-efa5-4783-ae1a-d3ed116af617)
+
 
 
 
