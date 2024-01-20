@@ -50,13 +50,13 @@ The architecture of the mini honeynet in Azure consists of the following compone
    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/2fef573b-1459-43d2-a6f2-3c8114a74c7b)
 
 
-## Creating LOG Analytics workspace 
+## Creating Log Analytics workspace 
 
   Setting up log analytics workspace which is a central log repository or log container for all applications and infrastructure which helps you collect, monitor, analyze, and query data.
   
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/f2f457b7-f45e-4e23-9c58-f56ecba0ee003f)
 
-## Creating Microsoft Sentinel SIEM 
+## Creating Microsoft Sentinel (SIEM) 
 
   Azure Sentinel is a Microsoft SIEM, that aids in detecting, investigating, and responding to security threats across enterprises. With advanced data collection, detection, seamless integration, and robust incident response tools.
   Now creating Microsoft Sentinel and connecting it to log analytics workspace. 
@@ -66,7 +66,7 @@ The architecture of the mini honeynet in Azure consists of the following compone
 
  
 
-## Microsoft defender
+## Microsoft Defender
    Enabling Microsoft defender for cloud which allows us to collect all event logs from vms, subscriptions to forward them to the central repository log analytics workspace.
    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/5cf2b470-8d8c-4759-8f4c-752b39a3e63f)
 
