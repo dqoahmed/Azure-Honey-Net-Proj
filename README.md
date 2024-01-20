@@ -8,20 +8,7 @@ The project involves the creation of user accounts with specific permissions, li
 
 Following this phase, the environment will undergo a reconfiguration process, incorporating security controls and system hardening measures. The ultimate aim is to conduct a comparative analysis between the secure and insecure states of the environment, thereby enhancing its overall resilience and security posture.
 
-
-
-- SecurityEvent (Windows Event Logs)
-- Syslog (Linux Event Logs)
-- SecurityAlert (Log Analytics Alerts Triggered)
-- SecurityIncident (Incidents created by Sentinel)
-- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
-
-## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
-
-## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
-
+## Honey-Net evnvironment components
 The architecture of the mini honeynet in Azure consists of the following components:
 
 - Virtual Network (VNet)
