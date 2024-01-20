@@ -42,6 +42,10 @@ The architecture of the mini honeynet in Azure consists of the following compone
 ## Storgae Account
    Created a storage account within the same resource group as the other resources.
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/ee92ad75-efa5-4783-ae1a-d3ed116af617)
+  
+## Key Vault
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/96b4d465-b5b0-412a-a261-b18647d53af7)
+
 
 ## Azure Active Directory (AAD)
 
@@ -80,15 +84,17 @@ The architecture of the mini honeynet in Azure consists of the following compone
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/4cec27d0-9447-4c4b-800c-fca4d822cc63)
 
  
- ## 	Enabling Loging and monitoring at the subscription level 
+ ## 	Enabling Loging and monitoring at the subscription level for the activity log
   Activating Loging and monitoring in the Azure monitor to export event activities that happen in the resources such as creating, deleting, and changing and who performed to log analytics workspace. I’ll create and delete resource 
   groups  to generate logs in the log analytics workspace. 
  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/f4eb06ab-3dbb-4d09-b36c-4ba2d5df5d78)
 
 
-## Enabling Loging and monitoring at the Resource level 
+## Enabling Loging and monitoring at the Resource level for storage and key vault
 Activating log collection for storage and key vault through diagnostics as part of our resources. I’ll upload a file to a container in the storage and edit then create secret passwords and view the passwords in the key vault to     generate logs in the log analytics.
 ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/c74e43f1-5ad3-43ee-9392-f8220a6fdaf5)
+![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/1b2c84f6-3c5f-48c4-9bd8-ecc7d6aaba26)
+
 
 
  
