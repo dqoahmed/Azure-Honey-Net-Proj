@@ -41,10 +41,10 @@ The architecture of the mini honeynet in Azure consists of the following compone
 ## Azure Active Directory (AAD)
 
   AAD is Cloud based identity and Access management that manages user accounts for people in the organization, stores user accounts, and can manage access to other cloud resources. Users can be granted different levels of permission       such  Tenant level, management level, Subscription level, and resource groups level and be  assigned a role or multiple roles within that level.
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/1db07b3c-3185-4016-b3e4-02b9a7fa7ab6)
 
   I created users and assigned roles such as tenant level global reader, subscription level reader and contributor.
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/6952a675-1585-48bb-9f10-526174b3a62a)
+   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/0dcf8857-4e29-45a8-9a3f-3df5802ca4f2)
+ 
 
 ## Creating LOG Analytics workspace 
 
@@ -59,18 +59,17 @@ The architecture of the mini honeynet in Azure consists of the following compone
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/e912ad94-5da9-46f7-a570-682ea8258d57)
 
 ## Microsoft defender
+   Enabling Microsoft defender for cloud which allows us to collect all event logs from vms, subscriptions to forward them to the central repository log analytics workspace.
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/1009cd59-de85-4793-8b82-7a55b793c2ab)
 
-  Enabling Microsoft defender for cloud which allows us to collect all event logs from vms, subscriptions to forward them to the central repository log analytics workspace.
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/eb552f93-fa42-477b-8413-2338e6ab7777)
-
+ 
 ## 	Enabling log collection for VMs and network security groups
-  Enabling flow logs for both Linux and Windows network security groups to forward log data to the central log workspace.
+    Enabling flow logs for both Linux and Windows network security groups to forward log data to the central log workspace.
+   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/58a11530-3d6b-4443-a669-13b55383a92a)
+   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/0f219196-28b9-42dc-84c5-7926bb3c9610)
 
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/e87780d1-ba01-46aa-a77d-e8a9dbc4de88)
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/15a4ce4c-36f8-4449-bec4-43d907de99a5)
-  
 ## Storgae Account
-  Created a storage account within the same resource group as the other resources.
+   Created a storage account within the same resource group as the other resources.
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/ee92ad75-efa5-4783-ae1a-d3ed116af617)
 
 
