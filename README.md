@@ -107,7 +107,8 @@ Activating log collection for storage and key vault through diagnostics as part 
 ## Sentinel
 
 Building maps for VM authentication failures and network malicious flow in the workbook.
-![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/bbd4ed07-5c07-41b7-b71e-7199190b2b0b
+![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/39647db5-e054-442a-afcb-332bb4caab52)
+
 
 creating analytics rules that define suspicious activity to trigger alerts. This example rule gets triggered when 10 consecutive failed logins occur on windows VM
 ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/cc64781d-3cc7-48cd-95bd-d242c6b977dc)
