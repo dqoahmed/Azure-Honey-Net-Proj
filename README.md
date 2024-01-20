@@ -118,6 +118,19 @@ Imported the rest of the analytics rules as a file
 ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/53cec3ba-ea9a-4867-a407-74bac55388f5)
 
 
+## Summary:
+
+The project involves setting up a cloud honeynet environment in Microsoft Azure. It includes creating essential resources such as virtual machines, key vaults, and storage. Azure Active Directory, log analytics, and a Security Information and Event Management (SIEM) system (Microsoft Sentinel) are configured.
+
+The virtual network architecture comprises a Virtual Network (VNet), Network Security Group (NSG), and three virtual machines (2 Windows, 1 Linux). The goal is to establish a comparative analysis between the secure and insecure states of the environment.
+
+Components like Azure Key Vault, Azure Storage Account, and Microsoft Defender are integrated. Users with specific roles are created in Azure Active Directory, following the principle of least privilege. Log Analytics workspace is set up as a central log repository, and Microsoft Sentinel is configured for security threat detection.
+
+Logs are enabled for various components, including Azure Active Directory, subscription-level activities, and resource-level activities for storage and key vault. Analytics rules are created to trigger alerts for suspicious activities, such as consecutive failed logins.
+
+The project aims to observe, analyze, and secure the environment, ultimately enhancing its resilience and security posture. It is part one of a two-part project
+
+
 
 
 
