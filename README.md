@@ -2,8 +2,13 @@
 ![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
 
 ## Introduction
+ In this project, my objective is to establish a cloud honeynet within Microsoft Azure, encompassing the creation of essential resources such as virtual machines, key vaults, and storage. Subsequently, I will configure Azure Active Directory, implement log analytics, and integrate a Security Information and Event Management (SIEM) system. Notably, the intentional configuration of vulnerability within the virtual machines and other resources will be undertaken to simulate external attacks.
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+The project involves the creation of user accounts with specific permissions, linking all resources to a centralized log repository within the log analytics workspace, facilitating log ingestion. This integrated system will then be connected to the SIEM to enable the triggering of alerts, generation of attack maps, and observation of incidents.
+
+Following this phase, the environment will undergo a reconfiguration process, incorporating security controls and system hardening measures. The ultimate aim is to conduct a comparative analysis between the secure and insecure states of the environment, thereby enhancing its overall resilience and security posture.
+
+
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
@@ -26,6 +31,62 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Key Vault
 - Azure Storage Account
 - Microsoft Sentinel
+  ## Virtual Machine and SSMS set up.
+
+  Here I created two virtual machines and added them in the same resource group and configured the network resource group for both VMs to be vulnerable by modifying the inbound security rules on the network security group and turned off   the VMs firewall defender as part of the honey net. Also, I installed SQL Server in Windows VM as another end point for people to attack. I exposed our network with the intent to observe our logs and secure them later. Then I added     another attack VM with separate network, location and resource group and installed SQL to attack the other VMs in order to generate and observe logs and then secure the environment for comparison.
+  
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/4fe3279f-73ef-429b-8304-03a723ca4e41)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/7b4120de-9bf2-4abb-b85b-c240333937f9)
+
+## Azure Active Directory (AAD)
+
+  AAD is Cloud based identity and Access management that manages user accounts for people in the organization, stores user accounts, and can manage access to other cloud resources. Users can be granted different levels of permission       such  Tenant level, management level, Subscription level, and resource groups level and be  assigned a role or multiple roles within that level.
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/1db07b3c-3185-4016-b3e4-02b9a7fa7ab6)
+
+  I created users and assigned roles such as tenant level global reader, subscription level reader and contributor.
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/6952a675-1585-48bb-9f10-526174b3a62a)
+
+## Creating LOG Analytics workspace 
+
+  Setting up log analytics workspace which is a central log repository or log container for all applications and infrastructure which helps you collect, monitor, analyze, and query data.
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/d85db180-f56c-4080-9f7c-aaeb614f5e4b)
+
+## Creating Microsoft Sentinel SIEM 
+
+  Azure Sentinel is a Microsoft SIEM, that aids in detecting, investigating, and responding to security threats across enterprises. With advanced data collection, detection, seamless integration, and robust incident response tools.
+  Now creating Microsoft Sentinel and connecting it to log analytics workspace. 
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/327fca2e-89b9-4a7b-8452-2fb1efecc0d0)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/e912ad94-5da9-46f7-a570-682ea8258d57)
+
+## Microsoft defender
+
+  Enabling Microsoft defender for cloud which allows us to collect all event logs from vms, subscriptions to forward them to the central repository log analytics workspace.
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/eb552f93-fa42-477b-8413-2338e6ab7777)
+
+## 	Enabling log collection for VMs and network security groups
+  Enabling flow logs for both Linux and Windows network security groups to forward log data to the central log workspace.
+
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/e87780d1-ba01-46aa-a77d-e8a9dbc4de88)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/15a4ce4c-36f8-4449-bec4-43d907de99a5)
+  
+## Storgae Account
+  Created a storage account within the same resource group as the other resources.
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/ee92ad75-efa5-4783-ae1a-d3ed116af617)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
