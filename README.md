@@ -2,11 +2,12 @@
 ![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
 
 ## Introduction
- In this project, my objective is to establish a cloud honeynet within Microsoft Azure, encompassing the creation of essential resources such as virtual machines, key vaults, and storage. Subsequently, I will configure Azure Active Directory, implement log analytics, and integrate a Security Information and Event Management (SIEM) system. Notably, the intentional configuration of vulnerability within the virtual machines and other resources will be undertaken to simulate external attacks.
+ In this project, my objective is to establish a cloud honeynet Environment within Microsoft Azure, encompassing the creation of essential resources such as virtual machines, key vaults, and storage. Subsequently, I will configure Azure Active Directory, implement log analytics, and integrate a Security Information and Event Management (SIEM) system.
 
-The project involves the creation of user accounts with specific permissions, linking all resources to a centralized log repository within the log analytics workspace, facilitating log ingestion. This integrated system will then be connected to the SIEM to enable the triggering of alerts, generation of attack maps, and observation of incidents.
+The project involves the creation of user accounts with specific permissions, linking all resources to a centralized log repository within the log analytics workspace, facilitating log ingestion. This integrated system will then be connected to the SIEM to enable the triggering of alerts and generation of attack maps on the incident observation and investigation dashboard.
 
-Following this phase, the environment will undergo a reconfiguration process, incorporating security controls and system hardening measures. The ultimate aim is to conduct a comparative analysis between the secure and insecure states of the environment, thereby enhancing its overall resilience and security posture.
+This is a part one (setting up the environment ) of a two part projec. The ultimate aim is to conduct a comparative analysis between the secure and insecure states of the environment, thereby enhancing its overall resilience and security posture.
+
 
 ## Honey-Net evnvironment components
 The architecture of the mini honeynet in Azure consists of the following components:
@@ -24,7 +25,8 @@ The architecture of the mini honeynet in Azure consists of the following compone
   Here I created two virtual machines and added them in the same resource group and configured the network resource group for both VMs to be vulnerable by modifying the inbound security rules on the network security group and turned off   the VMs firewall defender as part of the honey net. Also, I installed SQL Server in Windows VM as another end point for people to attack. I exposed our network with the intent to observe our logs and secure them later. Then I added     another attack VM with separate network, location and resource group and installed SQL to attack the other VMs in order to generate and observe logs and then secure the environment for comparison.
   
   ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/4fe3279f-73ef-429b-8304-03a723ca4e41)
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/7b4120de-9bf2-4abb-b85b-c240333937f9)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/524bf431-6b3f-4b4b-9ff1-7f4aba0abfcd)
+
   
 ## Storgae Account
    Created a storage account within the same resource group as the other resources.
@@ -52,14 +54,16 @@ The architecture of the mini honeynet in Azure consists of the following compone
 
   Setting up log analytics workspace which is a central log repository or log container for all applications and infrastructure which helps you collect, monitor, analyze, and query data.
   
-  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/f2f457b7-f45e-4e23-9c58-f56ecba0ee00)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/f2f457b7-f45e-4e23-9c58-f56ecba0ee003f)
 
 ## Creating Microsoft Sentinel SIEM 
 
   Azure Sentinel is a Microsoft SIEM, that aids in detecting, investigating, and responding to security threats across enterprises. With advanced data collection, detection, seamless integration, and robust incident response tools.
   Now creating Microsoft Sentinel and connecting it to log analytics workspace. 
-  
-    ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/6b72741b-87f4-4ba3-9b82-0e782f63679a)
+
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/8986b80b-9ffb-4e91-8987-811cb1cec727)
+  ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/03f8ee29-2bcc-419b-94f9-c4acbc538d33)
+
  
 
 ## Microsoft defender
@@ -95,6 +99,22 @@ Activating log collection for storage and key vault through diagnostics as part 
 
 ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/c74e43f1-5ad3-43ee-9392-f8220a6fdaf5)
 ![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/1b2c84f6-3c5f-48c4-9bd8-ecc7d6aaba26)
+
+## Sentinel
+
+Building maps for VM authentication failures and network malicious flow in the workbook.
+![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/bbd4ed07-5c07-41b7-b71e-7199190b2b0b
+
+creating analytics rules that define suspicious activity to trigger alerts. This example rule gets triggered when 10 consecutive failed logins occur on windows VM
+![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/cc64781d-3cc7-48cd-95bd-d242c6b977dc)
+
+Imported the rest of the analytics rules as a file
+![image](https://github.com/dqoahmed/Azure-Honey-Net-Proj/assets/156861134/53cec3ba-ea9a-4867-a407-74bac55388f5)
+
+
+
+
+
 
 
 
