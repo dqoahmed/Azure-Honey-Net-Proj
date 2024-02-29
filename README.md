@@ -1,4 +1,4 @@
-# Azure Microsoft Cloud Service and Environment Setup Project 
+# Azure Microsoft Cloud Service and Environment deployment and configuration
 
 ## Introduction
  In this project, my objective is to establish a cloud honeynet Environment within Microsoft Azure, encompassing the creation of essential resources such as virtual machines, key vaults, and storage. Subsequently, I will configure Azure Active Directory, implement log analytics, and integrate a Security Information and Event Management (SIEM) system.
